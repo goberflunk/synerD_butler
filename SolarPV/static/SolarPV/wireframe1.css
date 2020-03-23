@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+form {
+  display: block;
+}
+
+label,
+input {
+  display: block;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: Left;
+}
+
+.header .toplinks {
+  float: Right;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  text-align: Center;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.bottomnav {
+  border: 1px solid;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+.news {
+  text-align: center;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.open-overlay {
+  display: block !important;
+}
+
+.open {
+  display: block !important;
+}
+
+.signup-overlay {
+  z-index: 15;
+  height: 50%;
+  width: 25%;
+  overflow: auto;
+  float: left;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  opacity: 1;
+  display: none;
+  animation-name: registrationForm;
+  animation-duration: 2s;
+}
+
+.signup-background {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  opacity: 1;
+}
+
+.signup-overlay-content {
+  width: 100%;
+  max-width: 530px;
+  margin: 100px auto 0;
+  padding: 0 15px;
+  position: relative;
+  z-index: 10;
+}
+
+.close-overlay {
+  float: right;
+  font-size: 30px;
+}
+
+
+.signup-form {
+  margin-top: 35px;
+
+  label {
+    line-height: 100%;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  input {
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 0 8px;
+    border: 1px solid rgba(254, 254, 254, .3);
+    border-radius: 5px;
+  }
+}
+
+.dashboard-form {
+  display: none;
+}
+
+.dashboard-form-open{
+  display: block !important;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes registrationForm {
+  from{ left: 100%; }
+  to {left: 0px; }
+}
+
+/*all other browsers */
+@keyframes registrationForm {
+  from{ left: 100%; }
+  to {left: 0px; }
+}

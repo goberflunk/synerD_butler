@@ -1,0 +1,151 @@
+<!--
+Dillan Butler
+Module 1: Project Deliverable 1
+IFT 458 Spring 2020
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SolarPV</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    function openOverlay() {
+      var overlay = document.getElementById("signup-overlay");
+      overlay.classList.add("open-overlay");
+    }
+
+    function closeOverlay() {
+      var overlay = document.getElementById("signup-overlay");
+      overlay.classList.remove("open-overlay");
+    }
+
+    function checkValidEmail (email)
+    {
+      return /\S+@\S+\.\S+/.test(email)
+    }
+
+    function validateForm(){
+      var name = document.getElementById("signup-name").value;
+      var email = document.getElementById("signup-email").value;
+      var password1 = document.getElementById("signup-password1").value;
+      var password2 = document.getElementById("signup-password2").value;
+      if(name == "")
+      {
+        alert("Please enter a name");
+      }
+      else if (checkValidEmail(email) == false)
+      {
+        alert("Please enter a valid email");
+      }
+      else if(password1 == "")
+      {
+        alert("Please enter a password");
+      }
+      else if(password1 != password2)
+      {
+        alert("passwords must match");
+      }
+      else
+      {
+        alert("Account created!");
+      }
+
+    }
+  </script>
+<link rel="stylesheet" type="text/css" href="{% static 'SolarPV/wireframe1.css' %}">
+</head>
+
+<body>
+  <div class="header">
+    <div class="toplinks">
+      <a>About us</a>
+      <a>Contact us</a>
+    </div>
+    <img src="{% static 'SolarPV/SolarPvlogo.png' %}" height="100" width="100">
+    <h1>SolarPV</h1>
+    <p>Research & Development</p>
+  </div>
+
+  <div class="topnav">
+    <a href="#">Racks & Trackers</a>
+    <a href="#">PV Module</a>
+    <a href="#">PV Systems</a>
+    <a href="#">Data analytics</a>
+    <a href="#">Cybersecurity</a>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <button onClick="openOverlay()">Register</button>
+      |
+      <button>Login</button>
+      <h2>Column</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros,
+        eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+
+    <div class="column">
+      <video width="320" height="240" controls>
+        <source src="{% static 'SolarPV/SolarPV.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="column news">
+      <h3>News & Events</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros,
+        eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+  </div>
+  <div class="bottomnav">
+    SolarPV
+    <br>
+    Address, Phone, Email, Website
+    <br>
+    Site Map | Terms & Conditions | Privacy Policy | About Us
+  </div>
+  <div class="signup-overlay" id="signup-overlay">
+    <div class="signup-background"></div>
+    <div class="signup-overlay-content">
+      <button onClick="closeOverlay()" class="close-overlay">x</button>
+      <h1 class="main-heading">Signup Now</h1>
+      <form class="signup-form" method="post" action="#" novalidate="novalidate">
+        <label for="signup-Prefix">Prefix</label>
+        <select id="signup-Prefix">
+          <option value="mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="ms">Ms</option>
+          <option value="dr">Dr</option>
+        </select>
+        <label for="signup-first-name">First Name</label>
+        <input id="signup-first-name" type="text" name="Firstname" autocomplete="off" />
+        <label for="signup-middle-name">Middle Name</label>
+        <input id="signup-middle-name" type="text" name="Middlename" autocomplete="off" />
+        <label for="signup-last-name">Last Name</label>
+        <input id="signup-last-name" type="text" name="Lastname" autocomplete="off" />
+        <label for="signup-job-title">Job title</label>
+        <input id="signup-job-title" type="text" name="jobTitle" autocomplete="off" />
+        <label for="signup-email">Email Address</label>
+        <input id="signup-email" type="email" name="email" autocomplete="off" />
+        <label for="signup-office-phone">Office Phone</label>
+        <input id="signup-office-phone" type="text" name="officephone" autocomplete="off" />
+        <label for="signup-cell-phone">Office phone</label>
+        <input id="signup-cell-phone" type="text" name="cellphone" autocomplete="off" />
+        <label for="signup-Staff">Staff</label>
+        <select id="signup-Staff">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <label for="signup-password1">Password</label>
+        <input id="signup-password1" type="password" name="password1" autocomplete="off" />
+        <label for="signup-password2">Confirm Password</label>
+        <input id="signup-password2" type="password" name="password2" autocomplete="off" />
+      </form>
+      <button onclick="validateForm()">Submit</button>
+    </div>
+  </div>
+</body>
+
+</html>

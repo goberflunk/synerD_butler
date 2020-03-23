@@ -1,0 +1,236 @@
+<!--
+Dillan Butler
+Module 1: Project Deliverable 1
+IFT 458 Spring 2020
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'SolarPV/wireframe1.css' %}">
+  <script>
+
+    function openClient() {
+      var location = document.getElementById("location-form");
+      var client = document.getElementById("client-form");
+      var product = document.getElementById("product-form");
+      var testStandard = document.getElementById("test-standard-form");
+      var certificate= document.getElementById("certificate-form");
+
+      location.classList.remove("dashboard-form-open");
+      client.classList.add("dashboard-form-open");
+      product.classList.remove("dashboard-form-open");
+      testStandard.classList.remove("dashboard-form-open");
+      certificate.classList.remove("dashboard-form-open");
+    }
+
+    function openLocation() {
+      var location = document.getElementById("location-form");
+      var client = document.getElementById("client-form");
+      var product = document.getElementById("product-form");
+      var testStandard = document.getElementById("test-standard-form");
+      var certificate= document.getElementById("certificate-form");
+
+      location.classList.add("dashboard-form-open");
+      client.classList.remove("dashboard-form-open");
+      product.classList.remove("dashboard-form-open");
+      testStandard.classList.remove("dashboard-form-open");
+      certificate.classList.remove("dashboard-form-open");
+    }
+
+    function openProduct() {
+      var location = document.getElementById("location-form");
+      var client = document.getElementById("client-form");
+      var product = document.getElementById("product-form");
+      var testStandard = document.getElementById("test-standard-form");
+      var certificate= document.getElementById("certificate-form");
+
+      location.classList.remove("dashboard-form-open");
+      client.classList.remove("dashboard-form-open");
+      product.classList.add("dashboard-form-open");
+      testStandard.classList.remove("dashboard-form-open");
+      certificate.classList.remove("dashboard-form-open");
+    }
+
+    function openTestStandard() {
+      var location = document.getElementById("location-form");
+      var client = document.getElementById("client-form");
+      var product = document.getElementById("product-form");
+      var testStandard = document.getElementById("test-standard-form");
+      var certificate= document.getElementById("certificate-form");
+
+      location.classList.remove("dashboard-form-open");
+      client.classList.remove("dashboard-form-open");
+      product.classList.remove("dashboard-form-open");
+      testStandard.classList.add("dashboard-form-open");
+      certificate.classList.remove("dashboard-form-open");
+    }
+
+    function openCertificate() {
+      var location = document.getElementById("location-form");
+      var client = document.getElementById("client-form");
+      var product = document.getElementById("product-form");
+      var testStandard = document.getElementById("test-standard-form");
+      var certificate= document.getElementById("certificate-form");
+
+      location.classList.remove("dashboard-form-open");
+      client.classList.remove("dashboard-form-open");
+      product.classList.remove("dashboard-form-open");
+      testStandard.classList.remove("dashboard-form-open");
+      certificate.classList.add("dashboard-form-open");
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <img src="{% static 'SolarPV/SolarPvlogo.png' %}" height="100" width="100">
+    <h1>SolarPV</h1>
+    <p>Dashboard</p>
+  </div>
+
+  <div class="topnav">
+    <a onclick="openClient()">Client</a>
+    <a onClick="openLocation()">Location</a>
+    <a onClick="openProduct()">Product</a>
+    <a onClick="openTestStandard()">Test Standard</a>
+    <a onClick="openCertificate()">Certificate</a>
+  </div>
+
+  <div class="row">
+    <div id="client-form" class="dashboard-form dashboard-form-open">
+      <h1 class="main-heading">Client</h1>
+      <form class="signup-form" method="post" action="#" novalidate="novalidate">
+        <label for="client-code">Client Code</label>
+        <input id="client-code" type="text" name="clientcode" autocomplete="off" />
+        <label for="client-name">Client Name</label>
+        <input id="client-name" type="text" name="clientname" autocomplete="off" />
+        <label for="client-type">Client Type</label>
+        <input id="client-type" type="text" name="clienttype" autocomplete="off" />
+      </form>
+      <br>
+      <button>Submit</button>
+    </div>
+    <div id="location-form" class="dashboard-form">
+      <h1 class="main-heading">Location</h1>
+      <form class="signup-form" method="post" action="#" novalidate="novalidate">
+        <label for="location-client-id">Client ID</label>
+        <input id="signup-first-name" type="text" name="locationclientid" autocomplete="off" />
+        <label for="location-address1">Address 1</label>
+        <input id="location-address1" type="text" name="locationaddress1" autocomplete="off" />
+        <label for="location-address2">Address 2</label>
+        <input id="location-address2" type="text" name="locationaddress2" autocomplete="off" />
+        <label for="location-state">state</label>
+        <input id="location-state" type="text" name="locationstate" autocomplete="off" />
+        <label for="location-postal-code">postal code</label>
+        <input id="location-postal-code" type="text" name="locationpostalcode" autocomplete="off" />
+        <label for="location-country">country</label>
+        <input id="location-country" type="text" name="locationcountry" autocomplete="off" />
+        <label for="location-phone">Phone Number</label>
+        <input id="location-phone" type="text" name="locationphone" autocomplete="off" />
+        <label for="location-fax-number">Fax number</label>
+        <input id="location-fax-number" type="text" name="locationfax" autocomplete="off" />
+      </form>
+      <br>
+      <button>Submit</button>
+    </div>
+    <div id="product-form" class="dashboard-form">
+      <h1 class="main-heading">Product</h1>
+      <form class="signup-form" method="post" action="#" novalidate="novalidate">
+        <label for="product-model-number">Model Number</label>
+        <input id="product-model-number" type="text" name="productmodelnumber" autocomplete="off" />
+        <label for="product-name">Name</label>
+        <input id="product-name" type="text" name="productname" autocomplete="off" />
+        <label for="product-cell-technology">Cell technology</label>
+        <input id="product-cell-technology" type="text" name="productcelltechnology" autocomplete="off" />
+        <label for="product-cell-manufacturer">Cell manufacturer</label>
+        <input id="product-cell-manufacturer" type="text" name="productcellmanufacturer" autocomplete="off" />
+        <label for="product-number-cells">Number of cells</label>
+        <input id="product-numnber-cells" type="text" name="productnumbercells" autocomplete="off" />
+        <label for="product-number-cells-series">Number of cells in series</label>
+        <input id="product-number-cells-series" type="text" name="productnumbercellsseries" autocomplete="off" />
+        <label for="product-number-series-strings">Number of series strings</label>
+        <input id="product-number-series-strings" type="text" name="productnumberseriesstrings" autocomplete="off" />
+        <label for="product-number-diodes">Number of diodes</label>
+        <input id="product-number-diodes" type="text" name="productnumberdiodes" autocomplete="off" />
+        <label for="product-length">Length</label>
+        <input id="product-length" type="text" name="productlength" autocomplete="off" />
+        <label for="product-width">Width</label>
+        <input id="product-width" type="text" name="productwidth" autocomplete="off" />
+        <label for="product-weight">Weight</label>
+        <input id="product-weight" type="text" name="productweight" autocomplete="off" />
+        <label for="product-Superstrate-type">Superstrate type</label>
+        <input id="product-Superstrate-type" type="text" name="productsuperstratetype" autocomplete="off" />
+        <label for="product-superstrate-manufacturer">Superstrate manufacturer</label>
+        <input id="product-superstrate-manufacturer" type="text" name="productsuperstratemanufacturer" autocomplete="off" />
+        <label for="product-substrate-type">Substrate type</label>
+        <input id="product-substrate-type" type="text" name="productsubstratetype" autocomplete="off" />
+        <label for="product-substrate-manufacturer">Substrate manufacturer</label>
+        <input id="product-substrate-manufacturer" type="text" name="productsubstratemanufacturer" autocomplete="off" />
+        <label for="product-frame-type">Frame type</label>
+        <input id="product-frame-type" type="text" name="productframetype" autocomplete="off" />
+        <label for="product-frame-adhesive">Frame Adhesive</label>
+        <input id="product-weight" type="text" name="productweight" autocomplete="off" />
+        <label for="product-encapsulant-type">Encapsulant Type</label>
+        <input id="product-encapsulant-type" type="text" name="productencapsulanttype" autocomplete="off" />
+        <label for="product-encapsulant-manufacturer">Encapsulant manufacturer</label>
+        <input id="product-encapsulant-manufacturer" type="text" name="productencapsulantmanufacturer" autocomplete="off" />
+        <label for="product-junction-box-type">Junction box type</label>
+        <input id="product-junction-box-type" type="text" name="productjunctionboxtype" autocomplete="off" />
+        <label for="product-junction-box-manufacturer">Junction box manufacturer</label>
+        <input id="product-junction-box-manufacturer" type="text" name="productjunctionboxmanufacturer" autocomplete="off" />
+      </form>
+      <br>
+      <button>Submit</button>
+    </div>
+    <div id="test-standard-form" class="dashboard-form">
+      <h1 class="main-heading">Test Standard</h1>
+      <form class="signup-form" method="post" action="#" novalidate="novalidate">
+        <label for="test-standard-name">Standard Name</label>
+        <input id="test-standard-name" type="text" name="teststandardname" autocomplete="off" />
+        <label for="test-standard-description">Description</label>
+        <input id="test-standard-description" type="text" name="teststandarddescription" autocomplete="off" />
+        <label for="test-standard-date">Published Date</label>
+        <input id="test-standard-date" type="text" name="teststandarddate" autocomplete="off" />
+      </form>
+      <br>
+      <button>Submit</button>
+    </div>
+    <div id="certificate-form" class="dashboard-form">
+      <h1 class="main-heading">Certificate</h1>
+      <form class="signup-form" method="post" action="#" novalidate="novalidate">
+        <label for="certificate-number">Certificate number</label>
+        <input id="certificate-number" type="text" name="certificatenumber" autocomplete="off" />
+        <label for="certificate-location">Location</label>
+        <input id="certificate-location" type="text" name="certificatelocation" autocomplete="off" />
+        <label for="certificate-report-number">report number</label>
+        <input id="certificate-report-number" type="text" name="certificatereportnumber" autocomplete="off" />
+        <label for="certificate-contact-id">Contact ID</label>
+        <input id="certificate-contact-id" type="text" name="certificatecontactid" autocomplete="off" />
+        <label for="certificate-test-standard">Test Standard</label>
+        <input id="certificate-test-standard" type="text" name="certificateteststandard" autocomplete="off" />
+        <label for="certificate-product">product</label>
+        <input id="certificate-product" type="text" name="certificateproduct" autocomplete="off" />
+        <label for="certificate-date">Certificate issue date</label>
+        <input id="certificate-date" type="text" name="certificatedate" autocomplete="off" />
+      </form>
+      <br>
+      <button>Submit</button>
+    </div>
+  </div>
+  <br>
+  <div class="bottomnav">
+    SolarPV
+    <br>
+    Address, Phone, Email, Website
+    <br>
+    Site Map | Terms & Conditions | Privacy Policy | About Us
+  </div>
+</body>
+
+</html>
