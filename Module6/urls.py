@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('SolarPV/', include('SolarPV.urls'))
+    path('SolarPV/', include('SolarPV.urls')),
+    path('api/',include('backend.ulrs'))
 ]
